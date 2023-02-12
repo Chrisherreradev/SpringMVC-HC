@@ -4,7 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@TableGenerators(name = "Course")
+@TableGenerator(name = "Course")
 public class Course implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -13,7 +13,7 @@ public class Course implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_course")
     private int idCourse;
-    @ColumnName(name = "name_course")
+    @Column(name = "name_course")
     private String nameCourse;
     @Column(name = "type_course")
     private String typeCourse;
@@ -21,7 +21,7 @@ public class Course implements Serializable {
     private String nameTeacher;
     @Column(name = "number_students")
     private int numberStudents;
-    @ColumnNumber(name = "number_lessons")
+    @Column(name = "number_lessons")
     private int numberLessons;
 
 

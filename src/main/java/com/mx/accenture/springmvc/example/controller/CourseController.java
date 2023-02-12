@@ -16,7 +16,7 @@ import java.util.List;
 public class CourseController {
 
     @Autowired
-    private CourseService courseService;
+    private ICourseService courseService;
 
     @GetMapping("/list")
     public List<CourseDTO> listCourse(Model model){
@@ -25,7 +25,7 @@ public class CourseController {
     }
 
     @GetMapping("/delete/{id}")
-    public void deleteCourse(@PathVariable String id){
+    public void deleteCourse(@PathVariable int id){
         courseService.deleteCourse(id);
     }
 }

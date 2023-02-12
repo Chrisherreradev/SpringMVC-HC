@@ -16,11 +16,11 @@ public class CourseServiceImpl implements ICourseService {
     private CourseRepository courseRepository;
 
     public List<CourseDTO> listCourse() {
-        List<Course> cursos = courseRepository.find();
-        List<CourseDTO> customersDTO=cursos.stream()
-                .map((customer)-> mapCourseToCourseDTO(customer))
+        List<Course> courses = courseRepository.find();
+        List<CourseDTO> coursesDTO=courses.stream()
+                .map((course)-> mapCourseToCourseDTO(course))
                 .collect(Collectors.toList());
-        return customersDTO;
+        return coursesDTO;
     }
 
     @Override
